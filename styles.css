@@ -82,6 +82,7 @@ img { display: block; max-width: 100%; height: auto; }
   color: var(--btn-fg);
   font-weight: 700;
   border: 1px solid rgba(0,0,0,3); 
+  line-height: 1;  
 }
 
 .btn-icon {
