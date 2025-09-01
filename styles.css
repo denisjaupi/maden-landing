@@ -11,6 +11,18 @@ body {
   min-height: 100dvh;         /* altezza piena anche su mobile (barra indirizzi inclusa) */
 }
 
+.wrap {
+  width: min(100%, 420px);
+  padding: clamp(16px, 5vw, 30px);
+  margin: 0 auto;
+
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
 .cover img {
 width: 100%;
 max-width: 300px; /* immagine più piccola */
