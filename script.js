@@ -24,8 +24,11 @@ const icons = {
 document.querySelectorAll('[data-platform]').forEach(btn => {
   const platform = btn.getAttribute('data-platform');
   const icon = btn.querySelector('.btn-icon');
-  if (icons[platform] && icon) icon.innerHTML = icons[platform];
+  if (icons[platform] && icon && icon.innerHTML.trim() === '') {
+    icon.innerHTML = icons[platform];
+  }
 });
+
 
 
 // Audio preview
