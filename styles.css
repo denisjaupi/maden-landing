@@ -1,4 +1,12 @@
-/*
+:root {
+
+.container {
+min-height: 100dvh;
+max-width: var(--maxw);
+margin: 0 auto;
+padding: 24px;
+display: grid;
+grid-template-rows: auto auto 1fr;
 gap: 24px;
 }
 
