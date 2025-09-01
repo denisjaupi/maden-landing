@@ -1,4 +1,13 @@
-:root {
+/* V3 responsive: colonna tipo telefono anche su desktop, ma fluida su mobile piccolo */
+padding: 30px; /* più padding ai bordi */
+text-align: center;
+display: flex;
+flex-direction: column;
+align-items: center;
+}
+
+.cover img {
+width: 100%;
 max-width: 300px; /* immagine più piccola */
 aspect-ratio: 1/1;
 object-fit: cover;
