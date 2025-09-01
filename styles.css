@@ -81,7 +81,7 @@ img { display: block; max-width: 100%; height: auto; }
   background: var(--btn-bg);
   color: var(--btn-fg);
   font-weight: 700;
-  border: 1px solid rgba(0,0,0,0); 
+  border: 1px solid rgba(0,0,0,3); 
 }
 
 .btn-icon {
