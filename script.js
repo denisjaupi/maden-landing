@@ -7,10 +7,11 @@ youtube: `<svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/
 };
 
 document.querySelectorAll('[data-platform]').forEach(btn => {
-const platform = btn.getAttribute('data-platform');
-const icon = btn.querySelector('.btn-icon');
-if (icons[platform] && icon) icon.innerHTML = icons[platform];
+  const platform = btn.getAttribute('data-platform');
+  const icon = btn.querySelector('.btn-icon');
+  if (icons[platform] && icon) icon.innerHTML = icons[platform];
 });
+
 
 // Audio preview
 const audio = document.getElementById('preview');
