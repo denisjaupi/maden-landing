@@ -1,3 +1,52 @@
+// Anno nel footer
+youtube: `<svg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg' aria-hidden='true' focusable='false'><path d='M23.5 6.186a3.022 3.022 0 0 0-2.13-2.14C19.44 3.5 12 3.5 12 3.5s-7.44 0-9.37.546A3.022 3.022 0 0 0 .5 6.186 31.24 31.24 0 0 0 0 12a31.24 31.24 0 0 0 .5 5.814 3.022 3.022 0 0 0 2.13 2.14C4.56 20.5 12 20.5 12 20.5s7.44 0 9.37-.546a3.022 3.022 0 0 0 2.13-2.14c.35-1.906.5-3.81.5-5.814s-
+.15-3.908-.5-5.814zM9.75 15.568V8.432L15.818 12 9.75 15.568z'/></svg>`
+};
+
+document.querySelectorAll('[data-platform]').forEach(btn => {
+const platform = btn.getAttribute('data-platform');
+const icon = btn.querySelector('.btn-icon');
+if (icons[platform] && icon) icon.innerHTML = icons[platform];
+});
+
+// Player preview 20–30s (configurabile)
+const audio = document.getElementById('preview');
+const toggle = document.getElementById('playToggle');
+const MAX_SECONDS = 30; // cambia a 20 se vuoi
+let stopTimer = null;
+
+function stopPreview() {
+if (!audio) return;
+audio.pause();
+audio.currentTime = 0;
+toggle.setAttribute('aria-pressed', 'false');
+toggle.textContent = '▶︎ Riproduci preview';
+if (stopTimer) { clearInterval(stopTimer); stopTimer = null; }
+}
+
+if (audio && toggle) {
+toggle.addEventListener('click', async () => {
+if (audio.paused) {
+try {
+await audio.play();
+toggle.setAttribute('aria-pressed', 'true');
+toggle.textContent = '❚❚ Pausa';
+// ferma a MAX_SECONDS
+if (stopTimer) clearInterval(stopTimer);
+stopTimer = setInterval(() => {
+if (audio.currentTime >= MAX_SECONDS) stopPreview();
+}, 250);
+} catch (e) {
+console.warn('Riproduzione bloccata dal browser finché non c\'è interazione utente.', e);
+}
+} else {
+stopPreview();
+}
+});
+
+audio.addEventListener('ended', stopPreview);
+}
+```js
 // Imposta automaticamente l'anno nel footer
 document.getElementById('year').textContent = new Date().getFullYear();
 
