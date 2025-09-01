@@ -1,9 +1,14 @@
-/* V3 responsive: colonna tipo telefono anche su desktop, ma fluida su mobile piccolo */
-padding: 30px; /* più padding ai bordi */
-text-align: center;
-display: flex;
-flex-direction: column;
-align-items: center;
+body {
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  background: var(--bg);
+  color: var(--fg);
+
+  /* NUOVO: layout centrato e adatto al mobile */
+  display: flex;
+  align-items: center;        /* centra verticalmente il contenuto */
+  justify-content: center;    /* centra orizzontalmente */
+  min-height: 100dvh;         /* altezza piena anche su mobile (barra indirizzi inclusa) */
 }
 
 .cover img {
