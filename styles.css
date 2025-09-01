@@ -11,6 +11,8 @@ body {
   min-height: 100dvh;         /* altezza piena anche su mobile (barra indirizzi inclusa) */
 }
 
+img { display: block; max-width: 100%; height: auto; }
+
 .wrap {
   width: min(100%, 420px);
   padding: clamp(16px, 5vw, 30px);
